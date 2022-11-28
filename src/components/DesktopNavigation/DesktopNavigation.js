@@ -7,8 +7,9 @@ const DesktopNavigation = () => {
     <header className="hidden md:block">
       <nav className="flex justify-between items-center text-xl">
         <ul className="flex justify-between items-center">
-          <li className="px-4 py-2">
+          <li className="flex items-center px-4 py-2">
             <GiCrossedSlashes size={50} className="fill-orange" />
+            <span className="font-bold text-orange">گیم استور</span>
           </li>
           <NavLink
             to="/"
