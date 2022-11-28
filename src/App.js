@@ -1,12 +1,16 @@
-import BottomNavigation from "./components/BottomNavigation/BottomNavigation";
-import DesktopNavigation from "./components/DesktopNavigation/DesktopNavigation";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout/Layout";
+import routes from "./routes";
 
 function App() {
   return (
-    <div dir="rtl" className="p-4 text-center">
-      <DesktopNavigation/>
-      <BottomNavigation/>
-    </div>
+    <Layout>
+      <Routes>
+        {routes.map((route)=>{
+          return <Route key={Date.now()} {...route} />
+        })}
+      </Routes>
+    </Layout>
   );
 }
 
