@@ -10,7 +10,7 @@ const BottomNavigation = () => {
   };
 
   return (
-    <div className="md:hidden   border border-t-2 fixed bottom-0 left-0 right-0 w-full rounded-tr-md rounded-tl-md px-2 flex items-center">
+    <div className="md:hidden bg-black   border border-t-2 fixed bottom-0 left-0 right-0 w-full rounded-tr-md rounded-tl-md px-2 flex items-center">
       <nav className="w-full">
         <ul className="flex items-center justify-between gap-x-2 w-full text-md">
           <NavLink
