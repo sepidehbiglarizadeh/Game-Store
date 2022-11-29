@@ -1,6 +1,10 @@
+import SlideShow from "../SlideShow/SlideShow";
+
 const HomePage = () => {
     return ( 
-        <div>This is HomePage</div>
+        <div className="flex justify-evenly">
+            <SlideShow/>
+        </div>
      );
 }
  

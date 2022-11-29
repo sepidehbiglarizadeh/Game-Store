@@ -4,8 +4,26 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        @apply bg-black;
-        @apply text-gray;
-    }
+  html {
+    @apply bg-black;
+    @apply text-gray;
+  }
+}
+
+@layer components {
+  .slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 500px;
+    border-radius: 40px;
+  }
+  .slide {
+    display: inline-block;
+    height: 300px;
+    width: 100%;
+  }
+  .slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  }
 }
