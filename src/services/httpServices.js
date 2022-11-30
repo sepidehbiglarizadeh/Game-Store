@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL ="https://api.rawg.io/api";
+axios.defaults.baseURL ="http://localhost:3001";
 
 const http = {
   get: axios.get,

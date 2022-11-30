@@ -1,0 +1,132 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "image": "https://uupload.ir/view/cod_b8s6.webp/",
+      "name": "Call of Duty: Modern Warfare II",
+      "platforms": [
+        { "name": "PS5" },
+        { "name": "Xbox Series X and Series S" },
+        { "name": "PS4" },
+        { "name": "Xbox One" },
+        { "name": "Microsoft Windows" }
+      ],
+      "price": 70,
+      "geners": ["Third-person shooter", "Multiplayer online game"]
+    },
+    {
+      "id": 2,
+      "image": "https://uupload.ir/view/calisto_j48v.webp/",
+      "name": "The Callisto Protocol",
+      "platforms": [
+        { "name": "PS5" },
+        { "name": "PS4" },
+        { "name": "Xbox One" },
+        { "name": "Xbox Series X and Series S" },
+        { "name": "Microsoft Windows" }
+      ],
+      "price": 69.99,
+      "geners": [
+        "Survival horror",
+        "Shooter Video Game",
+        "Adventure game",
+        "Fighting game"
+      ]
+    },
+    {
+      "id": 3,
+      "image": "https://uupload.ir/view/elden-ring_wnn2.webp/",
+      "name": "Elden Ring",
+      "platforms": [
+        { "name": "PS5" },
+        { "name": "PS4" },
+        { "name": "Xbox Series X and Series S" },
+        { "name": "Xbox One, Microsoft Windows" }
+      ],
+      "price": 59.99,
+      "geners": [
+        "Open world",
+        "Adventure game",
+        "Action role-playing game",
+        "Fighting game",
+        "Platform game",
+        "Nonlinear gameplay"
+      ]
+    },
+    {
+      "id": 4,
+      "image": "https://uupload.ir/view/fifa_vts.webp/",
+      "name": "EA SPORTS FIFA 23",
+      "platforms": [{ "name": "PS5" }, { "name": "PS4" }],
+      "price": 59.99,
+      "geners": [
+        "Sports Video Game",
+        "Simulation Video Game",
+        "Simulation Game"
+      ]
+    },
+    {
+      "id": 5,
+      "image": "https://uupload.ir/view/halo-infinite_5fau.webp/",
+      "name": "Halo Infinite",
+      "platforms": [
+        { "name": "Xbox Series X and Series S" },
+        { "name": "Xbox One" },
+        { "name": "Microsoft Windows" },
+        { "name": "Xbox Cloud Gaming" }
+      ],
+      "price": 60,
+      "geners": ["First Person Shooter", "Adventure Game"]
+    },
+    {
+      "id": 6,
+      "image": "https://uupload.ir/view/horizon_7rhb.webp/",
+      "name": "Horizon Forbidden West",
+      "platforms": [{ "name": "PS5" }, { "name": "PS4" }],
+      "price": 69.99,
+      "geners": ["Action", "Role Playing Game"]
+    },
+    {
+      "id": 7,
+      "image": "https://uupload.ir/view/nfs_5zk4.webp/",
+      "name": "Need for Speed Unbound",
+      "platforms": [
+        { "name": "PS5" },
+        { "name": "Xbox Series X and Series S" },
+        { "name": "Microsoft Windows" }
+      ],
+      "price": 69.99,
+      "geners": ["Action", "Racing"]
+    },
+    {
+      "id": 8,
+      "image": "https://uupload.ir/view/sonic_i5no.webp/",
+      "name": "Sonic Frontiers",
+      "platforms": [
+        { "name": "PS5" },
+        { "name": "Nintendo Switch" },
+        { "name": "Xbox One" },
+        { "name": "PS4" },
+        { "name": "Xbox Series X and Series S" },
+        { "name": "Microsoft Windows" }
+      ],
+      "price": 59.99,
+      "geners": ["Platform game", "Fighting game", "Action-adventure game"]
+    },
+    {
+      "id": 9,
+      "image": "https://uupload.ir/view/starwars_gk05.webp/",
+      "name": "LEGO Star Wars: The Skywalker Saga",
+      "platforms": [
+        { "name": "Nintendo Switch" },
+        { "name": "PS5" },
+        { "name": "PS4" },
+        { "name": "Xbox One" },
+        { "name": "Xbox Series X and Series S" },
+        { "name": "Microsoft Windows" }
+      ],
+      "price": 49.99,
+      "geners": ["Action", "Platform game"]
+    }
+  ]
+}

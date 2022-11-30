@@ -26,4 +26,11 @@
     white-space: nowrap;
     transition: ease 1000ms;
   }
+  .glassMorphism {
+    background: rgba(154, 154, 154, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(23, 22, 22, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+  }
 }

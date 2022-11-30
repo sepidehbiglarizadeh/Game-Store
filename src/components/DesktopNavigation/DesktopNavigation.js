@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const DesktopNavigation = () => {
   return (
-    <header className="hidden md:block">
+    <header className="hidden mb-6 md:block">
       <nav className="flex justify-between items-center text-xl">
         <ul className="flex justify-between items-center">
           <li className="flex items-center px-4 py-2">

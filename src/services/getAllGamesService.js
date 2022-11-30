@@ -1,7 +1,7 @@
 import http from "./httpServices";
 
 const getAllGamesService = () => {
-    return http.get(`/games?key=${process.env.REACT_APP_API_KEY}`);
+    return http.get("/games");
 }
  
 export default getAllGamesService;

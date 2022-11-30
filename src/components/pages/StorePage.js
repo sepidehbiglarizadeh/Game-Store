@@ -1,20 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import getAllGamesService from "../../services/getAllGamesService";
 
 const StorePage = () => {
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
     const getGames = async () => {
       try {
         const { data } = await getAllGamesService();
-      console.log(data.results);
+        setGames(data);
       } catch (error) {
         console.log(error);
       }
     };
     getGames();
   }, []);
-  return <div>This is StorePage</div>;
+
+  console.log(games);
+
+  return (
+    <div>This is game store</div>
+  );
 };
 
 export default StorePage;
