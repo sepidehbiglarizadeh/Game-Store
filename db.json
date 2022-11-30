@@ -2,7 +2,7 @@
   "games": [
     {
       "id": 1,
-      "image": "https://uupload.ir/view/cod_b8s6.webp/",
+      "image": "https://s6.uupload.ir/filelink/N5wlhl8etwHI_ffbd2f9093/cod_b8s6.webp",
       "name": "Call of Duty: Modern Warfare II",
       "platforms": [
         { "name": "PS5" },
@@ -16,7 +16,7 @@
     },
     {
       "id": 2,
-      "image": "https://uupload.ir/view/calisto_j48v.webp/",
+      "image": "https://s6.uupload.ir/filelink/pp5r0l13MqDA_dd523d8111/calisto_j48v.webp",
       "name": "The Callisto Protocol",
       "platforms": [
         { "name": "PS5" },
@@ -35,7 +35,7 @@
     },
     {
       "id": 3,
-      "image": "https://uupload.ir/view/elden-ring_wnn2.webp/",
+      "image": "https://s6.uupload.ir/filelink/GD6ZrQLtjLwa_cbc01f206a/elden-ring_wnn2.webp",
       "name": "Elden Ring",
       "platforms": [
         { "name": "PS5" },
@@ -55,7 +55,7 @@
     },
     {
       "id": 4,
-      "image": "https://uupload.ir/view/fifa_vts.webp/",
+      "image": "https://s6.uupload.ir/filelink/wSBjNwrQwR2b_7a76d2edff/fifa_vts.webp",
       "name": "EA SPORTS FIFA 23",
       "platforms": [{ "name": "PS5" }, { "name": "PS4" }],
       "price": 59.99,
@@ -67,7 +67,7 @@
     },
     {
       "id": 5,
-      "image": "https://uupload.ir/view/halo-infinite_5fau.webp/",
+      "image": "https://s6.uupload.ir/filelink/RS7GiFdiiO7e_b10f83b2d2/halo-infinite_5fau.webp",
       "name": "Halo Infinite",
       "platforms": [
         { "name": "Xbox Series X and Series S" },
@@ -80,7 +80,7 @@
     },
     {
       "id": 6,
-      "image": "https://uupload.ir/view/horizon_7rhb.webp/",
+      "image": "https://s6.uupload.ir/filelink/Q6wQLdU2XQJS_62feb3b7a4/horizon_7rhb.webp",
       "name": "Horizon Forbidden West",
       "platforms": [{ "name": "PS5" }, { "name": "PS4" }],
       "price": 69.99,
@@ -88,7 +88,7 @@
     },
     {
       "id": 7,
-      "image": "https://uupload.ir/view/nfs_5zk4.webp/",
+      "image": "https://s6.uupload.ir/filelink/fP5rzHwEAydc_7ab531f385/nfs_5zk4.webp",
       "name": "Need for Speed Unbound",
       "platforms": [
         { "name": "PS5" },
@@ -100,7 +100,7 @@
     },
     {
       "id": 8,
-      "image": "https://uupload.ir/view/sonic_i5no.webp/",
+      "image": "https://s6.uupload.ir/filelink/nnLjzfWawSw6_2c76131abb/sonic_i5no.webp",
       "name": "Sonic Frontiers",
       "platforms": [
         { "name": "PS5" },
@@ -115,7 +115,7 @@
     },
     {
       "id": 9,
-      "image": "https://uupload.ir/view/starwars_gk05.webp/",
+      "image": "https://s6.uupload.ir/filelink/NhPqQMQCZV9A_d67e06626b/starwars_gk05.webp",
       "name": "LEGO Star Wars: The Skywalker Saga",
       "platforms": [
         { "name": "Nintendo Switch" },
