@@ -4,7 +4,7 @@ import DesktopNavigation from "../components/DesktopNavigation/DesktopNavigation
 
 const Layout = ({children}) => {
     return ( 
-        <div dir="rtl" className="p-4 pb-28">
+        <div dir="rtl" className="p-4 pb-28 md:pb-0">
             <DesktopNavigation/>
             <AppBar/>
             {children}
