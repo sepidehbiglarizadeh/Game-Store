@@ -41,7 +41,7 @@ const StorePage = () => {
 
   return (
     <div className="flex justify-between px-20">
-      <div className="w-[55%] glassMorphism px-6 py-7 max-h-[calc(100vh_-_140px)] overflow-y-auto sticky top-28">
+      <div className="w-[55%] glassMorphism px-6 py-7 max-h-[calc(100vh_-_140px)] overflow-y-auto sticky top-28 scrollbar">
         <Categories changeHandler={changeHandler} />
         <Platforms changeHandler={changeHandler} />
         <button className="w-full bg-orange text-black rounded-2xl py-2 font-bold">
