@@ -12,20 +12,22 @@ const items = [
   { id: 11, name: "survival" },
 ];
 
-const Categories = () => {
+const Categories = ({changeHandler}) => {
   return (
     <div className="mb-6">
       <div className="text-customWhite font-bold mb-4">دسته بندی</div>
       {items.map((item) => (
         <label
-          htmlFor={item.name}
+          htmlFor={item.id}
           class="py-1 flex items-center cursor-pointer"
         >
           <input
             type="checkbox"
             name="category"
-            id={item.name}
+            id={item.id}
             class="form-checkbox bg-gray/[0.18] rounded text-orange focus:ring-orange"
+            value={item.name}
+            onChange={changeHandler}
           />
           <span class="text-sm mr-2">{item.name}</span>
         </label>
