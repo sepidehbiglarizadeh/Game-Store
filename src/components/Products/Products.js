@@ -1,6 +1,6 @@
 const Products = ({games}) => {
     return ( 
-        <div className="flex flex-wrap gap-10 text-left">
+        <div className="flex flex-wrap gap-10 text-left justify-end">
         {games.map((game) => (
           <div
             key={game.id}

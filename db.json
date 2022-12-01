@@ -12,7 +12,7 @@
         { "name": "Microsoft Windows" }
       ],
       "price": 70,
-      "geners": ["Third-person shooter", "Multiplayer online game"]
+      "geners": ["shooter"]
     },
     {
       "id": 2,
@@ -26,12 +26,7 @@
         { "name": "Microsoft Windows" }
       ],
       "price": 69.99,
-      "geners": [
-        "Survival horror",
-        "Shooter Video Game",
-        "Adventure game",
-        "Fighting game"
-      ]
+      "geners": ["Survival", "Shooter", "Adventure", "Fighting"]
     },
     {
       "id": 3,
@@ -46,11 +41,11 @@
       "price": 59.99,
       "geners": [
         "Open world",
-        "Adventure game",
-        "Action role-playing game",
-        "Fighting game",
-        "Platform game",
-        "Nonlinear gameplay"
+        "Adventure",
+        "Action",
+        "role play",
+        "Fighting ",
+        "Platform "
       ]
     },
     {
@@ -59,11 +54,7 @@
       "name": "EA SPORTS FIFA 23",
       "platforms": [{ "name": "PS5" }, { "name": "PS4" }],
       "price": 59.99,
-      "geners": [
-        "Sports Video Game",
-        "Simulation Video Game",
-        "Simulation Game"
-      ]
+      "geners": ["Sports", "Simulation"]
     },
     {
       "id": 5,
@@ -76,7 +67,7 @@
         { "name": "Xbox Cloud Gaming" }
       ],
       "price": 60,
-      "geners": ["First Person Shooter", "Adventure Game"]
+      "geners": ["Shooter", "Adventure"]
     },
     {
       "id": 6,
@@ -84,7 +75,7 @@
       "name": "Horizon Forbidden West",
       "platforms": [{ "name": "PS5" }, { "name": "PS4" }],
       "price": 69.99,
-      "geners": ["Action", "Role Playing Game"]
+      "geners": ["Action", "Role Play"]
     },
     {
       "id": 7,
@@ -111,7 +102,7 @@
         { "name": "Microsoft Windows" }
       ],
       "price": 59.99,
-      "geners": ["Platform game", "Fighting game", "Action-adventure game"]
+      "geners": ["Platform", "Fighting", "Action", "Adventure"]
     },
     {
       "id": 9,
@@ -126,7 +117,7 @@
         { "name": "Microsoft Windows" }
       ],
       "price": 49.99,
-      "geners": ["Action", "Platform game"]
+      "geners": ["Action", "Platform"]
     }
   ]
 }

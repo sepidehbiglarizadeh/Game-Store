@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import getAllGamesService from "../../services/getAllGamesService";
+import Categories from "../Categories/Categories";
 import Products from "../Products/Products";
 
 const StorePage = () => {
@@ -20,8 +21,11 @@ const StorePage = () => {
   console.log(games);
 
   return (
-    <div>
-      <Products games={games}/>
+    <div className="flex justify-between px-20">
+      <div className="w-[55%] glassMorphism px-6 py-7 max-h-[calc(100vh_-_140px)] overflow-y-auto sticky top-28">
+        <Categories/>
+      </div>
+      <Products games={games} />
     </div>
   );
 };

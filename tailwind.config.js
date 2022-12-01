@@ -8,7 +8,15 @@ module.exports = {
       orange: "#e58e27",
       customWhite: "#fbfbfb",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["vazir"],
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: "class",
+    }),
+  ],
 };
