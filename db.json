@@ -36,7 +36,8 @@
         { "name": "PS5" },
         { "name": "PS4" },
         { "name": "Xbox Series X and Series S" },
-        { "name": "Xbox One, Microsoft Windows" }
+        { "name": "Xbox One" },
+        {"name":"Microsoft Windows"}
       ],
       "price": 59.99,
       "geners": [
