@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import getAllGamesService from "../../services/getAllGamesService";
-import Categories from "../Categories/Categories";
-import Platforms from "../Platforms/Platforms";
 import Products from "../Products/Products";
+import SideBar from "../SideBar/SideBar";
+import { FaFilter } from "react-icons/fa";
 
 const StorePage = () => {
   const [games, setGames] = useState([]);
@@ -11,6 +11,20 @@ const StorePage = () => {
     platform: [],
   });
   const [filteredGames, setFilteredGames] = useState([]);
+  const [isShowFilters, setIsShowFilters] = useState(false);
+
+  useEffect(() => {
+    const getGames = async () => {
+      try {
+        const { data } = await getAllGamesService();
+        setGames(data);
+        setFilteredGames(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getGames();
+  }, []);
 
   const changeHandler = (e) => {
     if (e.target.checked) {
@@ -28,19 +42,6 @@ const StorePage = () => {
     }
   };
 
-  useEffect(() => {
-    const getGames = async () => {
-      try {
-        const { data } = await getAllGamesService();
-        setGames(data);
-        setFilteredGames(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getGames();
-  }, []);
-
   const applyFilterHandler = () => {
     const filterGames = games.filter((game) => {
       return (
@@ -57,21 +58,33 @@ const StorePage = () => {
     } else {
       setFilteredGames(games);
     }
+    setIsShowFilters(false)
   };
 
   return (
-    <div className="flex justify-between px-20">
-      <div className="w-[55%] glassMorphism px-6 py-7 max-h-[calc(100vh_-_140px)] overflow-y-auto sticky top-28 scrollbar">
-        <Categories changeHandler={changeHandler} />
-        <Platforms changeHandler={changeHandler} />
-        <button
-          className="w-full bg-orange text-black rounded-2xl py-2 font-bold"
-          onClick={applyFilterHandler}
-        >
-          اعمال فیلتر ها
-        </button>
+    <div>
+      <div className="mb-4 md:hidden">
+        <div className="flex items-center justify-center glassMorphism w-2/5 p-2">
+          <span className="text-orange text-sm ml-1">
+            <FaFilter />
+          </span>
+          <button
+            className="text-customWhite"
+            onClick={() => setIsShowFilters((prevState) => !prevState)}
+          >
+            فیلترها
+          </button>
+        </div>
       </div>
-      <Products games={filteredGames} />
+      <div className="flex justify-between lg:px-20">
+        <SideBar
+          changeHandler={changeHandler}
+          applyFilterHandler={applyFilterHandler}
+          isShowFilters={isShowFilters}
+          setIsShowFilters={setIsShowFilters}
+        />
+        <Products games={filteredGames} />
+      </div>
     </div>
   );
 };

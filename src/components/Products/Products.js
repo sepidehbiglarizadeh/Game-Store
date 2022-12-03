@@ -1,10 +1,10 @@
 const Products = ({games}) => {
     return ( 
-        <div className="flex flex-wrap gap-10 text-left justify-end">
+        <div className="flex flex-wrap gap-10 text-left justify-end flex-1">
         {games.map((game) => (
           <div
             key={game.id}
-            className="w-full md:max-w-[250px] p-4 glassMorphism h-80 flex flex-col justify-between"
+            className="w-full md:max-w-[220px] p-4 glassMorphism h-80 flex flex-col justify-between"
           >
             <div className=" h-[50%] rounded-lg overflow-hidden">
               <img src={game.image} className="w-full h-full" alt={game.name} />
