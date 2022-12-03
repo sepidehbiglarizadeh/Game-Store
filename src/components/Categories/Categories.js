@@ -18,18 +18,19 @@ const Categories = ({changeHandler}) => {
       <div className="text-customWhite font-bold mb-4">دسته بندی</div>
       {items.map((item) => (
         <label
+          key={item.id}
           htmlFor={item.id}
-          class="py-1 flex items-center cursor-pointer"
+          className="py-1 flex items-center cursor-pointer"
         >
           <input
             type="checkbox"
             name="category"
             id={item.id}
-            class="form-checkbox bg-gray/[0.18] rounded text-orange focus:ring-orange"
+            className="form-checkbox bg-gray/[0.18] rounded text-orange focus:ring-orange"
             value={item.name}
             onChange={changeHandler}
           />
-          <span class="text-sm mr-2">{item.name}</span>
+          <span className="text-sm mr-2">{item.name}</span>
         </label>
       ))}
     </div>

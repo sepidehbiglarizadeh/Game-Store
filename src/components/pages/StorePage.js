@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import getAllGamesService from "../../services/getAllGamesService";
 import Products from "../Products/Products";
 import SideBar from "../SideBar/SideBar";
-import { FaFilter } from "react-icons/fa";
+import Sort from "../Sort/Sort";
 
 const StorePage = () => {
   const [games, setGames] = useState([]);
@@ -12,6 +12,7 @@ const StorePage = () => {
   });
   const [filteredGames, setFilteredGames] = useState([]);
   const [isShowFilters, setIsShowFilters] = useState(false);
+  const [isShowSort, setIsShowSort] = useState(false);
 
   useEffect(() => {
     const getGames = async () => {
@@ -58,24 +59,22 @@ const StorePage = () => {
     } else {
       setFilteredGames(games);
     }
-    setIsShowFilters(false)
+    setIsShowFilters(false);
   };
 
   return (
     <div>
-      <div className="mb-4 md:hidden">
-        <div className="flex items-center justify-center glassMorphism w-2/5 p-2">
-          <span className="text-orange text-sm ml-1">
-            <FaFilter />
-          </span>
-          <button
-            className="text-customWhite"
-            onClick={() => setIsShowFilters((prevState) => !prevState)}
-          >
-            فیلترها
-          </button>
-        </div>
-      </div>
+      <div
+        className={`bg-gray z-20 opacity-50 fixed right-0 left-0 top-0 bottom-0 ${
+          isShowSort ? "" : "hidden"
+        }`}
+        onClick={() => setIsShowSort(false)}
+      ></div>
+      <Sort
+        setIsShowFilters={setIsShowFilters}
+        setIsShowSort={setIsShowSort}
+        isShowSort={isShowSort}
+      />
       <div className="flex justify-between lg:px-20">
         <SideBar
           changeHandler={changeHandler}
