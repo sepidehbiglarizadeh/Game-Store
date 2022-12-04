@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaFilter, FaSortAmountDown, FaTimes } from "react-icons/fa";
 
-const Sort = ({ setIsShowFilters, isShowSort, setIsShowSort }) => {
+const Sort = ({ setIsShowFilters, isShowSort, setIsShowSort ,sortHandler}) => {
   return (
     <>
       <div className="mb-4 md:hidden flex justify-between gap-x-4">
@@ -28,18 +28,19 @@ const Sort = ({ setIsShowFilters, isShowSort, setIsShowSort }) => {
           </button>
         </div>
       </div>
-      <SortBox setIsShowSort={setIsShowSort} isShowSort={isShowSort} />
+      <SortBox setIsShowSort={setIsShowSort} isShowSort={isShowSort} sortHandler={sortHandler}/>
     </>
   );
 };
 
 export default Sort;
 
-const SortBox = ({ setIsShowSort, isShowSort }) => {
+const SortBox = ({ setIsShowSort, isShowSort ,sortHandler}) => {
   const [clickedItem, setClickedItem] = useState("");
 
-  const clickHandler = (id) => {
-    setClickedItem(id);
+  const clickHandler = (value) => {
+    setClickedItem(value);
+    sortHandler(value)
     setIsShowSort(false);
   };
 
@@ -62,14 +63,14 @@ const SortBox = ({ setIsShowSort, isShowSort }) => {
         <li className="pb-3 pt-3 border-b md:pb-0 md:pt-0 md:border-b-0 md:p-4">
           <button
             className="w-full text-right relative"
-            onClick={() => clickHandler(1)}
+            onClick={() => clickHandler("newest")}
           >
             <span
               className={`w-2 h-2 bg-orange rounded-full absolute -top-1 left-0 hidden ${
-                clickedItem === 1 ? "md:block" : "hidden"
+                clickedItem === "newest" ? "md:block" : "hidden"
               }`}
             ></span>
-            <span className={`${clickedItem === 1 ? "text-customWhite" : ""}`}>
+            <span className={`${clickedItem === "newest" ? "text-customWhite" : ""}`}>
               جدیدترین
             </span>
           </button>
@@ -77,14 +78,14 @@ const SortBox = ({ setIsShowSort, isShowSort }) => {
         <li className="pb-3 pt-3 border-b md:pb-0 md:pt-0 md:border-b-0 md:p-4">
           <button
             className="w-full text-right relative"
-            onClick={() => clickHandler(2)}
+            onClick={() => clickHandler("lowest")}
           >
             <span
               className={`w-2 h-2 bg-orange rounded-full absolute -top-1 left-0 hidden ${
-                clickedItem === 2 ? "md:block" : "hidden"
+                clickedItem === "lowest" ? "md:block" : "hidden"
               }`}
             ></span>
-            <span className={`${clickedItem === 2 ? "text-customWhite" : ""}`}>
+            <span className={`${clickedItem === "lowest" ? "text-customWhite" : ""}`}>
               ارزانترین
             </span>
           </button>
@@ -92,14 +93,15 @@ const SortBox = ({ setIsShowSort, isShowSort }) => {
         <li className="pb-3 pt-3 border-b md:pb-0 md:pt-0 md:border-b-0 md:p-4">
           <button
             className="w-full text-right relative"
-            onClick={() => clickHandler(3)}
+            onClick={()=>clickHandler("highest")}
+            id="highest"
           >
             <span
               className={`w-2 h-2 bg-orange rounded-full absolute -top-1 left-0 hidden ${
-                clickedItem === 3 ? "md:block" : "hidden"
+                clickedItem === "highest" ? "md:block" : "hidden"
               }`}
             ></span>
-            <span className={`${clickedItem === 3 ? "text-customWhite" : ""}`}>
+            <span className={`${clickedItem === "highest" ? "text-customWhite" : ""}`}>
               گرانترین
             </span>
           </button>

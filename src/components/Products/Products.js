@@ -1,6 +1,6 @@
 import Sort from "../Sort/Sort";
 
-const Products = ({ games,setIsShowFilters,setIsShowSort,isShowSort }) => {
+const Products = ({ games,setIsShowFilters,setIsShowSort,isShowSort,sortHandler }) => {
   return (
     <div className="flex flex-col w-full">
       <div>
@@ -8,6 +8,7 @@ const Products = ({ games,setIsShowFilters,setIsShowSort,isShowSort }) => {
           setIsShowFilters={setIsShowFilters}
           setIsShowSort={setIsShowSort}
           isShowSort={isShowSort}
+          sortHandler={sortHandler}
         />
       </div>
       <div className=" grid gap-x-2 gap-y-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-2 md:p-0 sm:gap-x-4 md:gap-x-6 md:gap-y-10">

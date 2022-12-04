@@ -12,7 +12,8 @@
         { "name": "Microsoft Windows" }
       ],
       "price": 70,
-      "geners": ["shooter"]
+      "geners": ["shooter"],
+      "date": "2022-11-26T20:30:00.000Z"
     },
     {
       "id": 2,
@@ -26,7 +27,8 @@
         { "name": "Microsoft Windows" }
       ],
       "price": 69.99,
-      "geners": ["Survival", "Shooter", "Adventure", "Fighting"]
+      "geners": ["Survival", "Shooter", "Adventure", "Fighting"],
+      "date": "2023-01-01T20:30:00.000Z"
     },
     {
       "id": 3,
@@ -37,7 +39,7 @@
         { "name": "PS4" },
         { "name": "Xbox Series X and Series S" },
         { "name": "Xbox One" },
-        {"name":"Microsoft Windows"}
+        { "name": "Microsoft Windows" }
       ],
       "price": 59.99,
       "geners": [
@@ -47,7 +49,8 @@
         "role play",
         "Fighting ",
         "Platform "
-      ]
+      ],
+      "date": "2022-03-24T19:30:00.000Z'"
     },
     {
       "id": 4,
@@ -55,7 +58,8 @@
       "name": "EA SPORTS FIFA 23",
       "platforms": [{ "name": "PS5" }, { "name": "PS4" }],
       "price": 59.99,
-      "geners": ["Sports", "Simulation"]
+      "geners": ["Sports", "Simulation"],
+      "date": "2022-10-25T20:30:00.000Z"
     },
     {
       "id": 5,
@@ -68,7 +72,8 @@
         { "name": "Xbox Cloud Gaming" }
       ],
       "price": 60,
-      "geners": ["Shooter", "Adventure"]
+      "geners": ["Shooter", "Adventure"],
+      "date": "2021-12-14T20:30:00.000Z"
     },
     {
       "id": 6,
@@ -76,7 +81,8 @@
       "name": "Horizon Forbidden West",
       "platforms": [{ "name": "PS5" }, { "name": "PS4" }],
       "price": 69.99,
-      "geners": ["Action", "Role Play"]
+      "geners": ["Action", "Role Play"],
+      "date": "2022-03-17T20:30:00.000Z"
     },
     {
       "id": 7,
@@ -88,7 +94,8 @@
         { "name": "Microsoft Windows" }
       ],
       "price": 69.99,
-      "geners": ["Action", "Racing"]
+      "geners": ["Action", "Racing"],
+      "date": "2022-12-28T20:30:00.000Z"
     },
     {
       "id": 8,
@@ -103,7 +110,8 @@
         { "name": "Microsoft Windows" }
       ],
       "price": 59.99,
-      "geners": ["Platform", "Fighting", "Action", "Adventure"]
+      "geners": ["Platform", "Fighting", "Action", "Adventure"],
+      "date": "2022-12-07T20:30:00.000Z"
     },
     {
       "id": 9,
@@ -118,7 +126,8 @@
         { "name": "Microsoft Windows" }
       ],
       "price": 49.99,
-      "geners": ["Action", "Platform"]
+      "geners": ["Action", "Platform"],
+      "date": "2022-05-04T19:30:00.000Z"
     }
   ]
 }

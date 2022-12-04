@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import getAllGamesService from "../../services/getAllGamesService";
 import Products from "../Products/Products";
 import SideBar from "../SideBar/SideBar";
+import _ from "lodash";
 
 const StorePage = () => {
   const [games, setGames] = useState([]);
@@ -61,6 +62,20 @@ const StorePage = () => {
     setIsShowFilters(false);
   };
 
+  const sortHandler = (value) => {
+    const allGames = [...filteredGames];
+    if (value === "lowest") {
+      const sortedGames = _.orderBy(allGames, ["price"], "asc");
+      setFilteredGames(sortedGames);
+    } else if (value === "highest") {
+      const sortedGames = _.orderBy(allGames, ["price"], "desc");
+      setFilteredGames(sortedGames);
+    }else {
+      const sortedGames = _.orderBy(allGames, ["date"], "desc");
+      setFilteredGames(sortedGames);
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto">
       <div
@@ -81,6 +96,7 @@ const StorePage = () => {
           setIsShowFilters={setIsShowFilters}
           setIsShowSort={setIsShowSort}
           isShowSort={isShowSort}
+          sortHandler={sortHandler}
         />
       </div>
     </div>
