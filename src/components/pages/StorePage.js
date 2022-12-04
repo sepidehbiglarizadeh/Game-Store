@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import getAllGamesService from "../../services/getAllGamesService";
 import Products from "../Products/Products";
 import SideBar from "../SideBar/SideBar";
-import Sort from "../Sort/Sort";
 
 const StorePage = () => {
   const [games, setGames] = useState([]);
@@ -70,11 +69,6 @@ const StorePage = () => {
         }`}
         onClick={() => setIsShowSort(false)}
       ></div>
-      <Sort
-        setIsShowFilters={setIsShowFilters}
-        setIsShowSort={setIsShowSort}
-        isShowSort={isShowSort}
-      />
       <div className="flex justify-between lg:px-20">
         <SideBar
           changeHandler={changeHandler}
@@ -82,7 +76,12 @@ const StorePage = () => {
           isShowFilters={isShowFilters}
           setIsShowFilters={setIsShowFilters}
         />
-        <Products games={filteredGames} />
+        <Products
+          games={filteredGames}
+          setIsShowFilters={setIsShowFilters}
+          setIsShowSort={setIsShowSort}
+          isShowSort={isShowSort}
+        />
       </div>
     </div>
   );

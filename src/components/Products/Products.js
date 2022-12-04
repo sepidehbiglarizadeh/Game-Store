@@ -1,6 +1,16 @@
-const Products = ({games}) => {
-    return ( 
-        <div className="flex flex-wrap gap-10 text-left justify-end flex-1">
+import Sort from "../Sort/Sort";
+
+const Products = ({ games,setIsShowFilters,setIsShowSort,isShowSort }) => {
+  return (
+    <div className="flex flex-col">
+      <div className="md:mr-4">
+        <Sort
+          setIsShowFilters={setIsShowFilters}
+          setIsShowSort={setIsShowSort}
+          isShowSort={isShowSort}
+        />
+      </div>
+      <div className="flex flex-wrap gap-10 text-left justify-end flex-1">
         {games.map((game) => (
           <div
             key={game.id}
@@ -21,9 +31,8 @@ const Products = ({games}) => {
           </div>
         ))}
       </div>
-     );
-}
- 
-export default Products;
+    </div>
+  );
+};
 
- 
+export default Products;
