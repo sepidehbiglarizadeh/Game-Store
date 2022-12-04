@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FaFilter, FaSortAmountDown, FaTimes } from "react-icons/fa";
 
 const Sort = ({ setIsShowFilters, isShowSort, setIsShowSort }) => {
@@ -35,6 +36,13 @@ const Sort = ({ setIsShowFilters, isShowSort, setIsShowSort }) => {
 export default Sort;
 
 const SortBox = ({ setIsShowSort, isShowSort }) => {
+  const [clickedItem, setClickedItem] = useState("");
+
+  const clickHandler = (id) => {
+    setClickedItem(id);
+    setIsShowSort(false);
+  };
+
   return (
     <div
       className={`bg-black fixed z-20 -bottom-full p-4 border-t-2 rounded-t-3xl md:py-2 md:px-4 md:relative md:flex md:items-center md:top-0 md:rounded-lg md:mb-6 md:glassMorphism md:border-t-0  ${
@@ -52,13 +60,49 @@ const SortBox = ({ setIsShowSort, isShowSort }) => {
           <FaSortAmountDown />
         </li>
         <li className="pb-3 pt-3 border-b md:pb-0 md:pt-0 md:border-b-0 md:p-4">
-          <button className="w-full text-right">جدیدترین</button>
+          <button
+            className="w-full text-right relative"
+            onClick={() => clickHandler(1)}
+          >
+            <span
+              className={`w-2 h-2 bg-orange rounded-full absolute -top-1 left-0 hidden ${
+                clickedItem === 1 ? "md:block" : "hidden"
+              }`}
+            ></span>
+            <span className={`${clickedItem === 1 ? "text-customWhite" : ""}`}>
+              جدیدترین
+            </span>
+          </button>
         </li>
         <li className="pb-3 pt-3 border-b md:pb-0 md:pt-0 md:border-b-0 md:p-4">
-          <button className="w-full text-right">ارزانترین</button>
+          <button
+            className="w-full text-right relative"
+            onClick={() => clickHandler(2)}
+          >
+            <span
+              className={`w-2 h-2 bg-orange rounded-full absolute -top-1 left-0 hidden ${
+                clickedItem === 2 ? "md:block" : "hidden"
+              }`}
+            ></span>
+            <span className={`${clickedItem === 2 ? "text-customWhite" : ""}`}>
+              ارزانترین
+            </span>
+          </button>
         </li>
         <li className="pb-3 pt-3 border-b md:pb-0 md:pt-0 md:border-b-0 md:p-4">
-          <button className="w-full text-right">گرانترین</button>
+          <button
+            className="w-full text-right relative"
+            onClick={() => clickHandler(3)}
+          >
+            <span
+              className={`w-2 h-2 bg-orange rounded-full absolute -top-1 left-0 hidden ${
+                clickedItem === 3 ? "md:block" : "hidden"
+              }`}
+            ></span>
+            <span className={`${clickedItem === 3 ? "text-customWhite" : ""}`}>
+              گرانترین
+            </span>
+          </button>
         </li>
       </ul>
     </div>

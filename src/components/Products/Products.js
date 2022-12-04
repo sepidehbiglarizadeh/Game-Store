@@ -2,15 +2,15 @@ import Sort from "../Sort/Sort";
 
 const Products = ({ games,setIsShowFilters,setIsShowSort,isShowSort }) => {
   return (
-    <div className="flex flex-col">
-      <div className="md:mr-4">
+    <div className="flex flex-col w-full">
+      <div>
         <Sort
           setIsShowFilters={setIsShowFilters}
           setIsShowSort={setIsShowSort}
           isShowSort={isShowSort}
         />
       </div>
-      <div className="flex flex-wrap gap-10 text-left justify-end flex-1">
+      <div className=" grid gap-x-2 gap-y-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-2 md:p-0 sm:gap-x-4 md:gap-x-6 md:gap-y-10">
         {games.map((game) => (
           <div
             key={game.id}

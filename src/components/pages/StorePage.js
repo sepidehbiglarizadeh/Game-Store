@@ -62,14 +62,14 @@ const StorePage = () => {
   };
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <div
         className={`bg-gray z-20 opacity-50 fixed right-0 left-0 top-0 bottom-0 ${
           isShowSort ? "" : "hidden"
         }`}
         onClick={() => setIsShowSort(false)}
       ></div>
-      <div className="flex justify-between lg:px-20">
+      <div className="flex justify-between lg:px-10">
         <SideBar
           changeHandler={changeHandler}
           applyFilterHandler={applyFilterHandler}
