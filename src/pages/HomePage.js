@@ -1,4 +1,4 @@
-import SlideShow from "../SlideShow/SlideShow";
+import SlideShow from "../components/SlideShow/SlideShow";
 
 const HomePage = () => {
   return (

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import getAllGamesService from "../../services/getAllGamesService";
-import Products from "../Products/Products";
-import SideBar from "../SideBar/SideBar";
+import getAllGamesService from "../services/getAllGamesService";
+import Products from "../components/Products/Products";
+import SideBar from "../components/SideBar/SideBar";
 import _ from "lodash";
 
 const StorePage = () => {

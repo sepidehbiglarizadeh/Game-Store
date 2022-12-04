@@ -1,9 +1,9 @@
-import CartPage from "./components/pages/CartPage";
-import FavouritesPage from "./components/pages/FavouritesPage";
-import HomePage from "./components/pages/HomePage";
-import LoginPage from "./components/pages/LoginPage";
-import SignupPage from "./components/pages/SignupPage";
-import StorePage from "./components/pages/StorePage";
+import CartPage from "./pages/CartPage";
+import FavouritesPage from "./pages/FavouritesPage";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import StorePage from "./pages/StorePage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
