@@ -1,6 +1,21 @@
+import { useCartActions } from "../../Providers/CartProvider";
 import Sort from "../Sort/Sort";
 
-const Products = ({ games,setIsShowFilters,setIsShowSort,isShowSort,sortHandler }) => {
+const Products = ({
+  games,
+  setIsShowFilters,
+  setIsShowSort,
+  isShowSort,
+  sortHandler,
+}) => {
+  
+
+const dispatch =useCartActions();
+
+  const addProductHandler = (product) => {
+    dispatch({ type: 'ADD_TO_CART', payload: product });
+  };
+
   return (
     <div className="flex flex-col w-full">
       <div>
@@ -22,7 +37,10 @@ const Products = ({ games,setIsShowFilters,setIsShowSort,isShowSort,sortHandler 
             </div>
             <h2 className="text-customWhite font-bold">{game.name}</h2>
             <div className="flex items-center">
-              <button className="flex-1 bg-orange rounded-3xl text-black p-2 font-bold">
+              <button
+                className="flex-1 bg-orange rounded-3xl text-black p-2 font-bold"
+                onClick={() => addProductHandler(game)}
+              >
                 خرید
               </button>
               <span className="text-orange font-bold text-lg mr-3">
