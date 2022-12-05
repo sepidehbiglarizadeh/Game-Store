@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { FaHome, FaStoreAlt, FaShoppingBasket, FaHeart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { useCart } from "../../Providers/CartProvider";
 
 const BottomNavigation = () => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const { cart } = useCart();
 
   const getSelectedItem = (id) => {
     setSelectedItem(id);
@@ -56,7 +58,7 @@ const BottomNavigation = () => {
             }
           >
             <li
-              className="py-4 cursor-pointer flex items-end"
+              className="py-4 cursor-pointer flex items-end relative"
               onClick={() => getSelectedItem(3)}
             >
               <FaShoppingBasket size={30} />
@@ -64,6 +66,13 @@ const BottomNavigation = () => {
                 className={`mr-1  ${selectedItem === 3 ? "block" : "hidden"}`}
               >
                 سبد خرید
+              </span>
+              <span
+                className={`w-5 h-5 bg-orange rounded-full absolute top-1 right-0 text-xs text-black font-bold flex justify-center items-center ${
+                  cart.length ? "" : "hidden"
+                }`}
+              >
+                {cart.length}
               </span>
             </li>
           </NavLink>

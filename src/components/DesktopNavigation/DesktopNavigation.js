@@ -1,8 +1,11 @@
 import { FaShoppingBasket, FaHeart } from "react-icons/fa";
 import { GiCrossedSlashes } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
+import { useCart } from "../../Providers/CartProvider";
 
 const DesktopNavigation = () => {
+  const { cart } = useCart();
+
   return (
     <header className="hidden mb-4 md:block sticky top-0 left-0 right-0 z-10 bg-black">
       <nav className="flex justify-between items-center text-xl">
@@ -35,8 +38,15 @@ const DesktopNavigation = () => {
               navData.isActive ? "text-customWhite" : ""
             }
           >
-            <li className="px-4 py-2">
+            <li className="px-4 py-2 relative">
               <FaShoppingBasket />
+              <span
+                className={`w-5 h-5 bg-orange rounded-full absolute -top-1 left-0 text-xs text-black font-bold flex justify-center items-center ${
+                  cart.length ? "" : "hidden"
+                }`}
+              >
+                {cart.length}
+              </span>
             </li>
           </NavLink>
           <NavLink
