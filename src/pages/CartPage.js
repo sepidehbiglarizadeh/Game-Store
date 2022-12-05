@@ -52,8 +52,32 @@ const CartPage = () => {
           );
         })}
       </section>
+      <CartSummery cart={cart} total={total} />
     </section>
   );
 };
 
 export default CartPage;
+
+const CartSummery = ({total,cart}) => {
+    const originalTotalPrice = cart.length
+    ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0)
+    : 0;
+    return ( 
+        <section className="p-4 flex flex-col glassMorphism w-[30%] mr-12 h-64">
+            <div className="flex justify-between items-center mb-3">
+                <p>قیمت کالاها :</p>
+                <p>${originalTotalPrice}</p>
+            </div>
+            <div className="flex justify-between items-center mb-3">
+                <p>تخفیف :</p>
+                <p>0</p>
+            </div>
+            <div className="flex justify-between items-center mb-3 border-t pt-3">
+                <p>جمع سبد خرید :</p>
+                <p>${total.toFixed(2)}</p>
+            </div>
+        </section>
+     );
+}
+ 
