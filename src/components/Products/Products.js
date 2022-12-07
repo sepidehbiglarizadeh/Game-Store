@@ -1,6 +1,8 @@
 import { useCart, useCartActions } from "../../Providers/CartProvider";
 import checkInCart from "../../utils/checkInCart";
 import Sort from "../Sort/Sort";
+import {toast} from "react-toastify";
+
 
 const Products = ({
   games,
@@ -15,6 +17,7 @@ const dispatch =useCartActions();
 
   const addProductHandler = (product) => {
     dispatch({ type: 'ADD_TO_CART', payload: product });
+    toast.success(`${product.name} به سبد خرید اضافه شد.`)
   };
 
   return (

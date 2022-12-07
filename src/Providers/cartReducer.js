@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const addProductToCart = (state, payload) => {
   const updatedCart = [...state.cart];
   const updatedItemIndex = updatedCart.findIndex(
@@ -23,6 +25,7 @@ const removeProductFromCart = (state, payload) => {
   const updatedItem = { ...updatedCart[updatedItemIndex] };
   if (updatedItem.quantity === 1) {
     const filteredCart = updatedCart.filter((item) => item.id !== payload.id);
+    toast.error(`${payload.name} از سبد خرید حذف شد.`)
     return {
       ...state,
       cart: filteredCart,
