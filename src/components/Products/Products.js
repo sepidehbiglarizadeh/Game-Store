@@ -1,4 +1,5 @@
-import { useCartActions } from "../../Providers/CartProvider";
+import { useCart, useCartActions } from "../../Providers/CartProvider";
+import checkInCart from "../../utils/checkInCart";
 import Sort from "../Sort/Sort";
 
 const Products = ({
@@ -9,7 +10,7 @@ const Products = ({
   sortHandler,
 }) => {
   
-
+const {cart}=useCart();
 const dispatch =useCartActions();
 
   const addProductHandler = (product) => {
@@ -41,7 +42,7 @@ const dispatch =useCartActions();
                 className="flex-1 bg-orange rounded-3xl text-black p-2 font-bold"
                 onClick={() => addProductHandler(game)}
               >
-                خرید
+                {checkInCart(cart,game) ? "در سبد شما" : "اضافه به سبد"}
               </button>
               <span className="text-orange font-bold text-lg mr-3">
                 ${game.price}

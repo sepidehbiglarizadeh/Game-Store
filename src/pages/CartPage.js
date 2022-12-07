@@ -74,11 +74,11 @@ const CartSummery = ({ total, cart }) => {
     <section className="p-4 flex flex-col glassMorphism  md:w-[30%] md:mr-12 h-64">
       <div className="flex justify-between items-center mb-3">
         <p>قیمت کالاها :</p>
-        <p>${originalTotalPrice}</p>
+        <p>${originalTotalPrice.toFixed(2)}</p>
       </div>
       <div className="flex justify-between items-center mb-3">
         <p>تخفیف :</p>
-        <p>${originalTotalPrice - total}</p>
+        <p>${(originalTotalPrice - total).toFixed(2)}</p>
       </div>
       <div className="flex justify-between items-center mb-3 border-t pt-3">
         <p>جمع سبد خرید :</p>
