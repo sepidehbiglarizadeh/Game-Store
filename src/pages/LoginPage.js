@@ -1,6 +1,7 @@
 import Input from "../common/Input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
 
 const initialValues = {
   email: "",
@@ -29,7 +30,7 @@ const LoginPage = () => {
 
   return (
     <div className="flex justify-center md:items-center">
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit} className="w-full md:w-auto">
         <Input formik={formik} name="email" label="ایمیل" type="email" />
         <Input formik={formik} name="password" label="پسورد" type="password" />
         <button
@@ -39,7 +40,9 @@ const LoginPage = () => {
         >
           ورود
         </button>
-        <p className="mt-4 text-sm text-orange">هنوز ثبت نام نکرده اید؟</p>
+        <Link to="/signup">
+          <p className="mt-4 text-sm text-orange">هنوز ثبت نام نکرده اید؟</p>
+        </Link>
       </form>
     </div>
   );
