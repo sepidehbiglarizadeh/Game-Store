@@ -2,6 +2,8 @@ import Input from "../common/Input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import loginService from "../services/loginService";
+import { useState } from "react";
 
 const initialValues = {
   email: "",
@@ -16,8 +18,18 @@ const validationSchema = Yup.object({
 });
 
 const LoginPage = () => {
-  const onSubmit = () => {
-    console.log("submitted");
+  const [error, setError] = useState(null);
+
+  const onSubmit = async (values) => {
+    try {
+      const { data } = await loginService(values);
+      console.log(data);
+      setError(null)
+    } catch (error) {
+      if(error){
+        setError("ایمیل یا پسورد اشتباه است!!")
+      }
+    }
   };
 
   const formik = useFormik({
@@ -40,6 +52,7 @@ const LoginPage = () => {
         >
           ورود
         </button>
+        {error && <p className="text-orange text-sm">{error}</p>}
         <Link to="/signup">
           <p className="mt-4 text-sm text-orange">هنوز ثبت نام نکرده اید؟</p>
         </Link>
