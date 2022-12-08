@@ -4,19 +4,22 @@ import CartProvider from "./Providers/CartProvider";
 import routes from "./routes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AuthProvider from "./Providers/AuthProvider";
 
 function App() {
   return (
-    <CartProvider>
-      <ToastContainer/>
-      <Layout>
-        <Routes>
-          {routes.map((route) => {
-            return <Route key={Date.now()} {...route} />;
-          })}
-        </Routes>
-      </Layout>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <ToastContainer />
+        <Layout>
+          <Routes>
+            {routes.map((route) => {
+              return <Route key={Date.now()} {...route} />;
+            })}
+          </Routes>
+        </Layout>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 

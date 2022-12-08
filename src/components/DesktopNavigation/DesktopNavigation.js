@@ -1,10 +1,12 @@
-import { FaShoppingBasket, FaHeart } from "react-icons/fa";
+import { FaShoppingBasket, FaHeart,FaUserAlt } from "react-icons/fa";
 import { GiCrossedSlashes } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../Providers/AuthProvider";
 import { useCart } from "../../Providers/CartProvider";
 
 const DesktopNavigation = () => {
   const { cart } = useCart();
+  const auth = useAuth();
 
   return (
     <header className="hidden mb-4 md:block sticky top-0 left-0 right-0 z-10 bg-black">
@@ -60,12 +62,12 @@ const DesktopNavigation = () => {
             </li>
           </NavLink>
           <NavLink
-            to="/login"
+            to={auth ? "/profile":"/login"}
             className={(navData) =>
               navData.isActive ? "text-customWhite" : ""
             }
           >
-            <li className="px-4 py-2">ورود/عضویت</li>
+            <li className="px-4 py-2">{auth ? <FaUserAlt/>: "ورد/عضویت"}</li>
           </NavLink>
         </ul>
       </nav>

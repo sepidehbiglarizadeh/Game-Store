@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import loginService from "../services/loginService";
 import { useState } from "react";
+import { useAuthActions } from "../Providers/AuthProvider";
 
 const initialValues = {
   email: "",
@@ -21,12 +22,14 @@ const LoginPage = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const setAuth = useAuthActions();
+
   const onSubmit = async (values) => {
     try {
       const { data } = await loginService(values);
-      console.log(data);
       setError(null);
-      navigate("/")
+      setAuth(data);
+      navigate("/");
     } catch (error) {
       if (error) {
         setError("ایمیل یا پسورد اشتباه است!!");

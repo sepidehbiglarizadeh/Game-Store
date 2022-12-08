@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import signupService from "../services/signupService";
 import { useState } from "react";
+import { useAuthActions } from "../Providers/AuthProvider";
 
 const initialValues = {
   name: "",
@@ -35,13 +36,15 @@ const SignupPage = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const setAuth = useAuthActions();
+
   const onSubmit = async (values) => {
     const { name, email, phoneNumber, password } = values;
     const userData = { name, email, phoneNumber, password };
     try {
       const { data } = await signupService(userData);
-      console.log(data);
-      navigate("/")
+      setAuth(data);
+      navigate("/");
     } catch (error) {
       if (error) {
         setError("ایمیل از قبل وجود دارد!!");

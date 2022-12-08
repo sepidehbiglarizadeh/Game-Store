@@ -251,7 +251,7 @@
   "users": [
     {
       "email": "test@gmail.com",
-      "password": "$2a$10$MvlAL9fFiCSnVdFk5ionLeZuM.GxlRKv5GINBKaLwh9A1Zl/YIW7m",
+      "password": "$2a$10$A2caRpVQ6Aq7ZioIiDllKOiGXXKBkRwuPXUukIQp7uKUsBao9iAee",
       "name": "test123",
       "phoneNumber": "00000000000",
       "id": 1

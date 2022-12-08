@@ -1,8 +1,11 @@
 import { GiCrossedSlashes } from "react-icons/gi";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../Providers/AuthProvider";
 
 const AppBar = () => {
+  const auth = useAuth();
+
   return (
     <div className="flex md:hidden items-center justify-between mb-6">
       <ul>
@@ -15,8 +18,8 @@ const AppBar = () => {
         <li>
           <FaSearch />
         </li>
-        <Link to="/login">
-          <li>ورود/عضویت</li>
+        <Link to={auth ? "/profile" : "/login"}>
+          <li>{auth ? <FaUserAlt /> : "ورود/عضویت"}</li>
         </Link>
       </ul>
     </div>
