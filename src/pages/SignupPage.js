@@ -2,6 +2,8 @@ import Input from "../common/Input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import signupService from "../services/signupService";
+import { useState } from "react";
 
 const initialValues = {
   name: "",
@@ -12,9 +14,7 @@ const initialValues = {
 };
 
 const validationSchema = Yup.object({
-  name: Yup.string()
-    .required("نام اجباری است")
-    .min(6, "طول نام معتبر نیست"),
+  name: Yup.string().required("نام اجباری است").min(6, "طول نام معتبر نیست"),
   email: Yup.string()
     .email("فرمت ایمیل اشتباه است")
     .required("ایمیل اجباری است"),
@@ -32,8 +32,19 @@ const validationSchema = Yup.object({
 });
 
 const SignupPage = () => {
-  const onSubmit = () => {
-    console.log("submitted");
+  const [error,setError]=useState(null);
+
+  const onSubmit = async (values) => {
+    const { name, email, phoneNumber, password } = values;
+    const userData = { name, email, phoneNumber, password };
+    try {
+      const {data}= await signupService(userData);
+      console.log(data);
+    } catch (error) {
+      if(error){
+        setError("ایمیل از قبل وجود دارد!!")
+      }
+    }
   };
 
   const formik = useFormik({
@@ -55,12 +66,7 @@ const SignupPage = () => {
           label="شماره موبایل"
           type="tel"
         />
-        <Input
-          formik={formik}
-          name="password"
-          label="پسورد"
-          type="password"
-        />
+        <Input formik={formik} name="password" label="پسورد" type="password" />
         <Input
           formik={formik}
           name="passwordConfirm"
@@ -74,6 +80,7 @@ const SignupPage = () => {
         >
           ثبت نام
         </button>
+        {error && <p className="text-orange text-sm">{error}</p>}
         <Link to="/login">
           <p className="mt-4 text-sm text-orange">قبلا ثبت نام کرده اید؟</p>
         </Link>

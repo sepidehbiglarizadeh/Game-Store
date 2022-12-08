@@ -5,43 +5,80 @@
       "image": "https://s6.uupload.ir/files/mwii-000-artreveal_3eqi.jpeg",
       "name": "Call of Duty: Modern Warfare II",
       "platforms": [
-        { "name": "PS5" },
-        { "name": "Xbox Series X and Series S" },
-        { "name": "PS4" },
-        { "name": "Xbox One" },
-        { "name": "Microsoft Windows" }
+        {
+          "name": "PS5"
+        },
+        {
+          "name": "Xbox Series X and Series S"
+        },
+        {
+          "name": "PS4"
+        },
+        {
+          "name": "Xbox One"
+        },
+        {
+          "name": "Microsoft Windows"
+        }
       ],
       "price": 70,
-      "geners": ["shooter"],
+      "geners": [
+        "shooter"
+      ],
       "date": "2022-11-26T20:30:00.000Z",
-      "offPrice":65
+      "offPrice": 65
     },
     {
       "id": 2,
       "image": "https://s6.uupload.ir/files/the-callisto-protocol-combate_2_e9v.jpg",
       "name": "The Callisto Protocol",
       "platforms": [
-        { "name": "PS5" },
-        { "name": "PS4" },
-        { "name": "Xbox One" },
-        { "name": "Xbox Series X and Series S" },
-        { "name": "Microsoft Windows" }
+        {
+          "name": "PS5"
+        },
+        {
+          "name": "PS4"
+        },
+        {
+          "name": "Xbox One"
+        },
+        {
+          "name": "Xbox Series X and Series S"
+        },
+        {
+          "name": "Microsoft Windows"
+        }
       ],
       "price": 69.99,
-      "geners": ["Survival", "Shooter", "Adventure", "Fighting"],
+      "geners": [
+        "Survival",
+        "Shooter",
+        "Adventure",
+        "Fighting"
+      ],
       "date": "2023-01-01T20:30:00.000Z",
-      "offPrice":60
+      "offPrice": 60
     },
     {
       "id": 3,
       "image": "https://s6.uupload.ir/files/elden-ring-990x556_vayj.jpg",
       "name": "Elden Ring",
       "platforms": [
-        { "name": "PS5" },
-        { "name": "PS4" },
-        { "name": "Xbox Series X and Series S" },
-        { "name": "Xbox One" },
-        { "name": "Microsoft Windows" }
+        {
+          "name": "PS5"
+        },
+        {
+          "name": "PS4"
+        },
+        {
+          "name": "Xbox Series X and Series S"
+        },
+        {
+          "name": "Xbox One"
+        },
+        {
+          "name": "Microsoft Windows"
+        }
       ],
       "price": 59.99,
       "geners": [
@@ -53,16 +90,25 @@
         "Platform "
       ],
       "date": "2022-03-24T19:30:00.000Z",
-      "offPrice":55
-      
+      "offPrice": 55
     },
     {
       "id": 4,
       "image": "https://s6.uupload.ir/files/is-fifa-23-crossplay-or-cross-platform_f1o.jpeg",
       "name": "EA SPORTS FIFA 23",
-      "platforms": [{ "name": "PS5" }, { "name": "PS4" }],
+      "platforms": [
+        {
+          "name": "PS5"
+        },
+        {
+          "name": "PS4"
+        }
+      ],
       "price": 59.99,
-      "geners": ["Sports", "Simulation"],
+      "geners": [
+        "Sports",
+        "Simulation"
+      ],
       "date": "2022-10-25T20:30:00.000Z",
       "offPrice": 56
     },
@@ -71,13 +117,24 @@
       "image": "https://s6.uupload.ir/files/header_(1)_2rqz.jpg",
       "name": "Halo Infinite",
       "platforms": [
-        { "name": "Xbox Series X and Series S" },
-        { "name": "Xbox One" },
-        { "name": "Microsoft Windows" },
-        { "name": "Xbox Cloud Gaming" }
+        {
+          "name": "Xbox Series X and Series S"
+        },
+        {
+          "name": "Xbox One"
+        },
+        {
+          "name": "Microsoft Windows"
+        },
+        {
+          "name": "Xbox Cloud Gaming"
+        }
       ],
       "price": 60,
-      "geners": ["Shooter", "Adventure"],
+      "geners": [
+        "Shooter",
+        "Adventure"
+      ],
       "date": "2021-12-14T20:30:00.000Z",
       "offPrice": 50
     },
@@ -85,9 +142,19 @@
       "id": 6,
       "image": "https://s6.uupload.ir/files/horizon-forbidden-west-1-scaled_z86i.jpg",
       "name": "Horizon Forbidden West",
-      "platforms": [{ "name": "PS5" }, { "name": "PS4" }],
+      "platforms": [
+        {
+          "name": "PS5"
+        },
+        {
+          "name": "PS4"
+        }
+      ],
       "price": 69.99,
-      "geners": ["Action", "Role Play"],
+      "geners": [
+        "Action",
+        "Role Play"
+      ],
       "date": "2022-03-17T20:30:00.000Z",
       "offPrice": 67
     },
@@ -96,12 +163,21 @@
       "image": "https://s6.uupload.ir/files/maxresdefault_(1)_iimg.jpg",
       "name": "Need for Speed Unbound",
       "platforms": [
-        { "name": "PS5" },
-        { "name": "Xbox Series X and Series S" },
-        { "name": "Microsoft Windows" }
+        {
+          "name": "PS5"
+        },
+        {
+          "name": "Xbox Series X and Series S"
+        },
+        {
+          "name": "Microsoft Windows"
+        }
       ],
       "price": 69.99,
-      "geners": ["Action", "Racing"],
+      "geners": [
+        "Action",
+        "Racing"
+      ],
       "date": "2022-12-28T20:30:00.000Z",
       "offPrice": 65
     },
@@ -110,15 +186,32 @@
       "image": "https://s6.uupload.ir/files/maxresdefault_iikk.jpg",
       "name": "Sonic Frontiers",
       "platforms": [
-        { "name": "PS5" },
-        { "name": "Nintendo Switch" },
-        { "name": "Xbox One" },
-        { "name": "PS4" },
-        { "name": "Xbox Series X and Series S" },
-        { "name": "Microsoft Windows" }
+        {
+          "name": "PS5"
+        },
+        {
+          "name": "Nintendo Switch"
+        },
+        {
+          "name": "Xbox One"
+        },
+        {
+          "name": "PS4"
+        },
+        {
+          "name": "Xbox Series X and Series S"
+        },
+        {
+          "name": "Microsoft Windows"
+        }
       ],
       "price": 59.99,
-      "geners": ["Platform", "Fighting", "Action", "Adventure"],
+      "geners": [
+        "Platform",
+        "Fighting",
+        "Action",
+        "Adventure"
+      ],
       "date": "2022-12-07T20:30:00.000Z",
       "offPrice": 55
     },
@@ -127,17 +220,41 @@
       "image": "https://s6.uupload.ir/files/capsule_616x353_e8d4.jpg",
       "name": "LEGO Star Wars: The Skywalker Saga",
       "platforms": [
-        { "name": "Nintendo Switch" },
-        { "name": "PS5" },
-        { "name": "PS4" },
-        { "name": "Xbox One" },
-        { "name": "Xbox Series X and Series S" },
-        { "name": "Microsoft Windows" }
+        {
+          "name": "Nintendo Switch"
+        },
+        {
+          "name": "PS5"
+        },
+        {
+          "name": "PS4"
+        },
+        {
+          "name": "Xbox One"
+        },
+        {
+          "name": "Xbox Series X and Series S"
+        },
+        {
+          "name": "Microsoft Windows"
+        }
       ],
       "price": 49.99,
-      "geners": ["Action", "Platform"],
+      "geners": [
+        "Action",
+        "Platform"
+      ],
       "date": "2022-05-04T19:30:00.000Z",
       "offPrice": 45
+    }
+  ],
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$MvlAL9fFiCSnVdFk5ionLeZuM.GxlRKv5GINBKaLwh9A1Zl/YIW7m",
+      "name": "test123",
+      "phoneNumber": "00000000000",
+      "id": 1
     }
   ]
 }
