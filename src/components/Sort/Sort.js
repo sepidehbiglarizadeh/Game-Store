@@ -46,7 +46,7 @@ const SortBox = ({ setIsShowSort, isShowSort ,sortHandler}) => {
 
   return (
     <div
-      className={`bg-black fixed z-20 -bottom-full p-4 border-t-2 rounded-t-3xl md:py-2 md:px-4 md:relative md:flex md:items-center md:top-0 md:rounded-lg md:mb-6 md:glassMorphism md:border-t-0  ${
+      className={`bg-black fixed z-20 md:z-0 -bottom-full p-4 border-t-2 rounded-t-3xl md:py-2 md:px-4 md:relative md:flex md:items-center md:top-0 md:rounded-lg md:mb-6 md:glassMorphism md:border-t-0  ${
         isShowSort ? " fixed right-0 left-0 -bottom-0 top-24" : ""
       }`}
     >

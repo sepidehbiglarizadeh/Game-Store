@@ -3,8 +3,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import signupService from "../services/signupService";
-import { useState } from "react";
-import { useAuthActions } from "../Providers/AuthProvider";
+import { useEffect, useState } from "react";
+import { useAuth, useAuthActions } from "../Providers/AuthProvider";
+import { useQuery } from "../hooks/useQuery";
 
 const initialValues = {
   name: "",
@@ -35,8 +36,14 @@ const validationSchema = Yup.object({
 const SignupPage = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
   const setAuth = useAuthActions();
+  const auth=useAuth();
+  const query= useQuery();
+  const redirect = query.get("redirect") || "";
+
+  useEffect(() => {
+    if (auth) navigate(`/${redirect}`);
+  }, [auth, redirect]);
 
   const onSubmit = async (values) => {
     const { name, email, phoneNumber, password } = values;
@@ -44,7 +51,7 @@ const SignupPage = () => {
     try {
       const { data } = await signupService(userData);
       setAuth(data);
-      navigate("/");
+      navigate(`/${redirect}`);
     } catch (error) {
       if (error) {
         setError("ایمیل از قبل وجود دارد!!");
@@ -86,7 +93,7 @@ const SignupPage = () => {
           ثبت نام
         </button>
         {error && <p className="text-orange text-sm">{error}</p>}
-        <Link to="/login">
+        <Link to={`/login?redirect=${redirect}`}>
           <p className="mt-4 text-sm text-orange">قبلا ثبت نام کرده اید؟</p>
         </Link>
       </form>

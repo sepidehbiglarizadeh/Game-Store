@@ -6,7 +6,7 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import { GiCrossedSlashes } from "react-icons/gi";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth, useAuthActions } from "../../Providers/AuthProvider";
 import { useCart } from "../../Providers/CartProvider";
 
@@ -14,13 +14,15 @@ const DesktopNavigation = () => {
   const { cart } = useCart();
   const [isShow, setIsShow] = useState(false);
   const auth = useAuth();
-  const setAuth=useAuthActions();
+  const setAuth = useAuthActions();
+  const navigate = useNavigate();
 
-  const logoutUser=()=>{
+  const logoutUser = () => {
     localStorage.removeItem("authState");
     setAuth(false);
-    setIsShow(false)
-  }
+    setIsShow(false);
+    navigate("/")
+  };
 
   return (
     <header className="hidden mb-4 md:block sticky top-0 left-0 right-0 z-10 bg-black">
@@ -98,11 +100,17 @@ const DesktopNavigation = () => {
           </li>
         </ul>
         {auth && (
-          <div className={`absolute left-0 -bottom-7 glassMorphism flex flex-col px-4 py-1 text-sm ${isShow ? "": "hidden"}`}>
-            <Link to="/profile" onClick={()=>setIsShow(false)}>
+          <div
+            className={`absolute left-0 -bottom-7 glassMorphism flex flex-col px-4 py-1 text-sm ${
+              isShow ? "" : "hidden"
+            }`}
+          >
+            <Link to="/profile" onClick={() => setIsShow(false)}>
               <span>{auth.user.name}</span>
             </Link>
-            <span className="cursor-pointer" onClick={logoutUser}>خروج</span>
+            <span className="cursor-pointer" onClick={logoutUser}>
+              خروج
+            </span>
           </div>
         )}
       </nav>

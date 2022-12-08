@@ -1,5 +1,6 @@
 import { useCart, useCartActions } from "../Providers/CartProvider";
 import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
   const { cart, total } = useCart();
@@ -84,9 +85,11 @@ const CartSummery = ({ total, cart }) => {
         <p>جمع سبد خرید :</p>
         <p>${total.toFixed(2)}</p>
       </div>
-      <button className="w-full bg-orange rounded-lg text-black font-bold py-3 mt-5">
-        ادامه
-      </button>
+      <Link to="/login?redirect=checkout">
+        <button className="w-full bg-orange rounded-lg text-black font-bold py-3 mt-5">
+          ادامه
+        </button>
+      </Link>
     </section>
   );
 };
