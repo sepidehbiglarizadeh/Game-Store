@@ -1,7 +1,7 @@
 import Input from "../common/Input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginService from "../services/loginService";
 import { useState } from "react";
 
@@ -19,15 +19,17 @@ const validationSchema = Yup.object({
 
 const LoginPage = () => {
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const onSubmit = async (values) => {
     try {
       const { data } = await loginService(values);
       console.log(data);
-      setError(null)
+      setError(null);
+      navigate("/")
     } catch (error) {
-      if(error){
-        setError("ایمیل یا پسورد اشتباه است!!")
+      if (error) {
+        setError("ایمیل یا پسورد اشتباه است!!");
       }
     }
   };

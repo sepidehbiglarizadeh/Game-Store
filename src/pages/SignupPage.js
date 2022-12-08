@@ -1,7 +1,7 @@
 import Input from "../common/Input";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import signupService from "../services/signupService";
 import { useState } from "react";
 
@@ -32,17 +32,19 @@ const validationSchema = Yup.object({
 });
 
 const SignupPage = () => {
-  const [error,setError]=useState(null);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const onSubmit = async (values) => {
     const { name, email, phoneNumber, password } = values;
     const userData = { name, email, phoneNumber, password };
     try {
-      const {data}= await signupService(userData);
+      const { data } = await signupService(userData);
       console.log(data);
+      navigate("/")
     } catch (error) {
-      if(error){
-        setError("ایمیل از قبل وجود دارد!!")
+      if (error) {
+        setError("ایمیل از قبل وجود دارد!!");
       }
     }
   };
