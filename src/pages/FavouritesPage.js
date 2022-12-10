@@ -19,7 +19,7 @@ const FavouritesPage = () => {
   };
 
   if(favProducts.length<=0){
-    return <p>هیچ محصولی به لیست اضافه نشده است</p>
+    return <p className="text-center">هیچ محصولی به لیست اضافه نشده است</p>
   }
   return (
     <div className=" grid gap-x-2 gap-y-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 px-2 md:p-0 sm:gap-x-4 md:gap-x-6 md:gap-y-10 md:px-10">

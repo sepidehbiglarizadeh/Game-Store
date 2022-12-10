@@ -2,10 +2,12 @@ import { useState } from "react";
 import { FaHome, FaStoreAlt, FaShoppingBasket, FaHeart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../Providers/CartProvider";
+import { useFav } from "../../Providers/FavProvider";
 
 const BottomNavigation = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const { cart } = useCart();
+  const fav = useFav();
 
   const getSelectedItem = (id) => {
     setSelectedItem(id);
@@ -83,7 +85,7 @@ const BottomNavigation = () => {
             }
           >
             <li
-              className="py-4 cursor-pointer flex items-end"
+              className="py-4 cursor-pointer flex items-end relative"
               onClick={() => getSelectedItem(4)}
             >
               <FaHeart size={30} />
@@ -91,6 +93,13 @@ const BottomNavigation = () => {
                 className={`mr-1 ${selectedItem === 4 ? "block" : "hidden"} `}
               >
                 علاقه مندی ها
+              </span>
+              <span
+                className={`w-5 h-5 bg-orange rounded-full absolute top-1 right-0 text-xs text-black font-bold flex justify-center items-center ${
+                  fav.length ? "" : "hidden"
+                }`}
+              >
+                {fav.length}
               </span>
             </li>
           </NavLink>

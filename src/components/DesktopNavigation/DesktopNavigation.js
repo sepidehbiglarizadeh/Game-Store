@@ -9,19 +9,21 @@ import { GiCrossedSlashes } from "react-icons/gi";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth, useAuthActions } from "../../Providers/AuthProvider";
 import { useCart } from "../../Providers/CartProvider";
+import { useFav } from "../../Providers/FavProvider";
 
 const DesktopNavigation = () => {
   const { cart } = useCart();
   const [isShow, setIsShow] = useState(false);
   const auth = useAuth();
   const setAuth = useAuthActions();
+  const fav = useFav();
   const navigate = useNavigate();
 
   const logoutUser = () => {
     localStorage.removeItem("authState");
     setAuth(false);
     setIsShow(false);
-    navigate("/")
+    navigate("/");
   };
 
   return (
@@ -73,8 +75,15 @@ const DesktopNavigation = () => {
               navData.isActive ? "text-customWhite" : ""
             }
           >
-            <li className="px-4 py-2">
+            <li className="px-4 py-2 relative">
               <FaHeart />
+              <span
+                className={`w-5 h-5 bg-orange rounded-full absolute -top-1 left-0 text-xs text-black font-bold flex justify-center items-center ${
+                  fav.length ? "" : "hidden"
+                }`}
+              >
+                {fav.length}
+              </span>
             </li>
           </NavLink>
 
