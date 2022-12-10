@@ -26,6 +26,7 @@ const FavouritesPage = () => {
       {favProducts.map((game) => (
         <Product
             key={game.id}
+            fav={favProducts}
           cart={cart}
           game={game}
           addProductHandler={addProductHandler}

@@ -1,7 +1,8 @@
 import checkInCart from "../../utils/checkInCart";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart,FaHeart } from "react-icons/fa";
+import checkinFav from "../../utils/checkInFav";
 
-const Product = ({game,addProductToFavHandler,addProductHandler,cart}) => {
+const Product = ({game,addProductToFavHandler,addProductHandler,cart,fav}) => {
     return ( 
         <div
             className="w-full md:max-w-[220px] p-4 glassMorphism h-80 flex flex-col justify-between"
@@ -14,7 +15,7 @@ const Product = ({game,addProductToFavHandler,addProductHandler,cart}) => {
               className="text-lg"
               onClick={() => addProductToFavHandler(game)}
             >
-              <FaRegHeart />
+              {checkinFav(fav,game) ? <FaHeart/> : <FaRegHeart/>}
             </button>
             <div className="flex items-center">
               <button
