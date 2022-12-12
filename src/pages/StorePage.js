@@ -3,6 +3,7 @@ import getAllGamesService from "../services/getAllGamesService";
 import Products from "../components/Products/Products";
 import SideBar from "../components/SideBar/SideBar";
 import _ from "lodash";
+import { useLocation } from "react-router-dom";
 
 const StorePage = () => {
   const [games, setGames] = useState([]);
@@ -13,6 +14,9 @@ const StorePage = () => {
   const [filteredGames, setFilteredGames] = useState([]);
   const [isShowFilters, setIsShowFilters] = useState(false);
   const [isShowSort, setIsShowSort] = useState(false);
+  const location = useLocation();
+  const searchedGameId = location.state;
+  const searchedGame= searchedGameId.id ? games.filter((game)=>game.id === searchedGameId.id) : [];
 
   useEffect(() => {
     const getGames = async () => {
@@ -70,7 +74,7 @@ const StorePage = () => {
     } else if (value === "highest") {
       const sortedGames = _.orderBy(allGames, ["price"], "desc");
       setFilteredGames(sortedGames);
-    }else {
+    } else {
       const sortedGames = _.orderBy(allGames, ["date"], "desc");
       setFilteredGames(sortedGames);
     }
@@ -92,7 +96,7 @@ const StorePage = () => {
           setIsShowFilters={setIsShowFilters}
         />
         <Products
-          games={filteredGames}
+          games={searchedGame.length ? searchedGame : filteredGames}
           setIsShowFilters={setIsShowFilters}
           setIsShowSort={setIsShowSort}
           isShowSort={isShowSort}

@@ -1,7 +1,7 @@
 import { useCart, useCartActions } from "../../Providers/CartProvider";
 import Sort from "../Sort/Sort";
 import { toast } from "react-toastify";
-import {  useFav, useFavActions } from "../../Providers/FavProvider";
+import { useFav, useFavActions } from "../../Providers/FavProvider";
 import Product from "../Product/Product";
 
 const Products = ({
@@ -13,7 +13,7 @@ const Products = ({
 }) => {
   const { cart } = useCart();
   const dispatch = useCartActions();
-  const fav=useFav();
+  const fav = useFav();
   const favDispatch = useFavActions();
 
   const addProductHandler = (product) => {
@@ -37,7 +37,14 @@ const Products = ({
       </div>
       <div className=" grid gap-x-2 gap-y-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-2 md:p-0 sm:gap-x-4 md:gap-x-6 md:gap-y-10">
         {games.map((game) => (
-          <Product key={game.id} fav={fav} cart={cart} game={game} addProductHandler={addProductHandler} addProductToFavHandler={addProductToFavHandler} />
+          <Product
+            key={game.id}
+            fav={fav}
+            cart={cart}
+            game={game}
+            addProductHandler={addProductHandler}
+            addProductToFavHandler={addProductToFavHandler}
+          />
         ))}
       </div>
     </div>

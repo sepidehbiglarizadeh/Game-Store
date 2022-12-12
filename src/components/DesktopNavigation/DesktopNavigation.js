@@ -10,6 +10,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth, useAuthActions } from "../../Providers/AuthProvider";
 import { useCart } from "../../Providers/CartProvider";
 import { useFav } from "../../Providers/FavProvider";
+import Search from "../Search/Search";
 
 const DesktopNavigation = () => {
   const { cart } = useCart();
@@ -30,10 +31,12 @@ const DesktopNavigation = () => {
     <header className="hidden mb-4 md:block sticky top-0 left-0 right-0 z-10 bg-black">
       <nav className="flex justify-between items-center text-xl relative">
         <ul className="flex justify-between items-center">
-          <li className="flex items-center px-4 py-2">
-            <GiCrossedSlashes size={50} className="fill-orange" />
-            <span className="font-bold text-orange">گیم استور</span>
-          </li>
+          <NavLink to="/">
+            <li className="flex items-center px-4 py-2">
+              <GiCrossedSlashes size={50} className="fill-orange" />
+              <span className="font-bold text-orange">گیم استور</span>
+            </li>
+          </NavLink>
           <NavLink
             to="/"
             className={(navData) =>
@@ -47,10 +50,12 @@ const DesktopNavigation = () => {
             className={(navData) =>
               navData.isActive ? "text-customWhite" : ""
             }
+            state={{ id: null }}
           >
             <li className="px-4 py-2">فروشگاه</li>
           </NavLink>
         </ul>
+        <Search />
         <ul className="flex justify-between items-center">
           <NavLink
             to="/cart"

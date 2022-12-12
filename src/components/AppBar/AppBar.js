@@ -1,8 +1,9 @@
 import { GiCrossedSlashes } from "react-icons/gi";
-import { FaSearch, FaUserAlt, FaChevronDown } from "react-icons/fa";
+import { FaUserAlt, FaChevronDown } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth, useAuthActions } from "../../Providers/AuthProvider";
 import { useState } from "react";
+import Search from "../Search/Search";
 
 const AppBar = () => {
   const auth = useAuth();
@@ -16,17 +17,16 @@ const AppBar = () => {
   };
 
   return (
-    <div className="flex md:hidden items-center justify-between mb-6 relative">
+    <div className="flex md:hidden items-center justify-between mb-6 pb-8 relative">
       <ul>
-        <li className="flex items-center py-2">
-          <GiCrossedSlashes size={50} className="fill-orange" />
-          <span className="font-bold text-orange">گیم استور</span>
-        </li>
+        <Link to="/">
+          <li className="flex items-center py-2">
+            <GiCrossedSlashes size={50} className="fill-orange" />
+            <span className="font-bold text-orange">گیم استور</span>
+          </li>
+        </Link>
       </ul>
       <ul className="flex items-center gap-x-4">
-        <li>
-          <FaSearch />
-        </li>
         <li>
           {auth ? (
             <button
@@ -62,6 +62,7 @@ const AppBar = () => {
           </span>
         </div>
       )}
+      <Search />
     </div>
   );
 };

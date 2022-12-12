@@ -40,6 +40,7 @@ const BottomNavigation = () => {
             className={(navData) =>
               navData.isActive ? "text-customWhite" : ""
             }
+            state={{ id: null }}
           >
             <li
               className="py-4 cursor-pointer flex items-end"
