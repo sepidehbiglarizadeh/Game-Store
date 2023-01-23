@@ -20,6 +20,8 @@ const DesktopNavigation = () => {
   const fav = useFav();
   const navigate = useNavigate();
 
+  console.log(auth);
+
   const logoutUser = () => {
     localStorage.removeItem("authState");
     setAuth(false);
